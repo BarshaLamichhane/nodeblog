@@ -85,33 +85,26 @@
 
         // Medium devices (tablets, 768px and up)
         @media (min-width: 768px) { 
-            
-        label{
-        display: flex;
-        }
         .card{
                 width:400px;
-                margin:auto
+                //margin:auto
             }
             .jumbotron{
                 width:600px;
-                margin:auto;
-            
+                //margin:auto;
             } 
         }
 
         // Large devices (desktops, 992px and up)
         @media (min-width: 992px) { 
-            label{
-            display: flex;
-            }
+            
             .card{
                 width:500px;
-                margin:auto
+               // margin:auto
             }
             .jumbotron{
                 width:700px;
-                margin:auto;
+                //margin:auto;
             
             }
         }
@@ -123,18 +116,25 @@
             }
             .card{
                 width:500px;
-                margin:auto
+                //margin:auto
             }
             .jumbotron{
                 width:700px;
-                margin:auto;
-                margin-top:200px;
+                //margin:auto;
+                
             } 
             .available{
                 width:100%;
                 background-color: green;
                 border-bottom-color: green;
             }        
+        }
+         @media (min-width: 1400px) { 
+            
+            .jumbotron{
+               margin-top:150px;
+            
+            }
         }
     </style>
 
