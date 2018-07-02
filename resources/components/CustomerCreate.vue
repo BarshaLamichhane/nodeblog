@@ -83,11 +83,10 @@ export default {
 
     mounted() {
        
-        $("label").addClass("float-left")
+       
         $("input").css("background-color","rgba(211, 211, 211, 0.1)")
          $(".jumbotron").css("width","600px")
                         .css("margin","auto")
-                        //.css("background-color","lime")
          $("button").css("width","100%")
                     .css("background-color","green")
                     .css("border","green")
@@ -101,3 +100,9 @@ export default {
     }
 }
 </script>
+<style>
+label{
+    display: flex;
+}
+
+</style>
