@@ -4,27 +4,49 @@
             <div class="card">
                 <div class="card-body">
                     <form action="/action_page.php">
-                        <div class="form-group">
-                            <label for="email">Email address:</label>
-                            <span class="input-group-text fa fa-envelope" id="email"></span>
-                            <input type="email" class="form-control " >
+                        <div class="from-control">
+                            <label class="mt-1">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text fa fa-user" id="inputGroupPrepend"></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="username"  required>
+                                <div class="invalid-feedback">
+                                Please choose a username.
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <span class="input-group-text fa fa-lock" id="password"></span>
-                            <input type="password" class="form-control" id="pwd">
+                        <div >
+                            <label class="mt-1">email</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text fa fa-envelope" id="inputGroupPrepend"></span>
+                                </div>
+                                <input type="email" class="form-control"  placeholder="email"  required>
+                                <div class="invalid-feedback">
+                                Please enter valid email format.
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="pwdd">Confirm Password:</label>
-                            <span class="input-group-text fa fa-lock" id="passwordconform"></span>
-                            <input type="password" class="form-control" id="pwdd">
+                         <div>
+                            <label class="mt-1">Password</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text fa fa-lock" ></span>
+                                </div>
+                                <input type="password" class="form-control"  placeholder="Password"  required>
+                            </div>
                         </div>
-                       <!-- <div class="form-group form-check">
-                            <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"> Remember me
-                            </label>
-                        </div>-->
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div>
+                            <label class="mt-1">Confirm Password</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text fa fa-lock" ></span>
+                                </div>
+                                <input type="password" class="form-control"  placeholder="Re-enter password"  required>
+                            </div>
+                        </div>
+                        <button type="submit" class="mt-4 btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
@@ -33,27 +55,81 @@
 </template>
 <script>
 export default {
-    data(){
-        return{
-            
+  data() {
+    return {};
+  },
+  mounted() {
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+    @media (min-width: 576px) { 
+       label{
+       display: flex;
+       } 
+       .card{
+            width:300px;
+            margin:auto
         }
-    },
-    mounted(){
-        $("label").addClass("float-left")
-        $(".input-group-text").css("position","absolute")
-                              .css("width","40px")
-                              .css("height","38px")
-                              .css("margin-top","32px")
-        $(".jumbotron").css("width","500px")
-                        .css("margin","auto")
-        $("button").css("width","100%")
-                    //.css("margin-left" ,"120px")
-       
-                   
-        
+        .jumbotron{
+            width:500px;
+            margin:auto
+        } 
+           
 
     }
-}
-</script>
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) { 
+        
+       label{
+       display: flex;
+       }
+       .card{
+            width:400px;
+            margin:auto
+        }
+        .jumbotron{
+            width:600px;
+            margin:auto
+        } 
+           
+
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) { 
+        label{
+         display: flex;
+        }
+        .card{
+            width:500px;
+            margin:auto
+        }
+        .jumbotron{
+            width:700px;
+            margin:auto
+        }
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        label{
+         display: flex;
+        }
+        .card{
+            width:500px;
+            margin:auto
+        }
+        .jumbotron{
+            width:700px;
+            margin:auto
+        }
+
+             
+
+    }
+</style>
 
 
