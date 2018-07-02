@@ -2,27 +2,17 @@
         <div class="container">
             <div class="jumbotron">
                 <div class="card">
+                    <div class="card-header">   </div>
                     <div class="card-body">
-                        <form action="/login" method="POST" v-on:submit.prevent="submitPost">
-                            <div class="from-control">
-                                <label >Username:</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                    <span class="input-group-text fa fa-user" ></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="username">
-                                    <div class="invalid-feedback">
-                                    Please choose a username.
-                                    </div>
-                                </div>
-                            </div>
-                            <div >
+                      <!--  <img width="200px" height="200px" :src="image"/> -->
+                        <form action="#">
+                            <div>
                                 <label class="mt-2">email:</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                     <span class="input-group-text fa fa-envelope" ></span>
                                     </div>
-                                    <input type="email" class="form-control"  placeholder="email" >
+                                    <input type="email" class="form-control"  placeholder="email"  required>
                                     <div class="invalid-feedback">
                                     Please enter valid email format.
                                     </div>
@@ -34,19 +24,10 @@
                                     <div class="input-group-prepend">
                                     <span class="input-group-text fa fa-lock" ></span>
                                     </div>
-                                    <input type="password" class="form-control"  placeholder="Password">
+                                    <input type="password" class="form-control"  placeholder="Password"  required>
                                 </div>
                             </div>
-                            <div>
-                                <label class="mt-2">Confirm Password:</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                    <span class="input-group-text fa fa-lock" ></span>
-                                    </div>
-                                    <input type="password" class="form-control"  placeholder="Re-enter password">
-                                </div>
-                            </div>
-                            <button type="submit" v-bind:class={available:available} class="mt-4 btn btn-primary" >Submit</button>
+                            <button type="submit" v-bind:class={available:available} class="mt-4 btn btn-primary" >login</button>
                         </form>
                     </div>
                 </div>
@@ -57,13 +38,9 @@
     export default {
     data() {
         return {
-            available:true
+            available:true,
+            //image:"https://thumb7.shutterstock.com/display_pic_with_logo/1906715/261331787/stock-vector-abstract-creative-concept-vector-member-login-form-interface-for-web-page-site-mobile-261331787.jpg"
         };
-    },
-    methods:{
-        submitPost(){
-            this.$router.push("/login");
-        }
     },
     mounted() {
     }
@@ -77,12 +54,14 @@
         } 
         .card{
                 width:300px;
+                background:"";
                 margin:auto
             }
             .jumbotron{
                 width:500px;
                 margin:auto;
-                background-color: lightgrey;
+                background: url('https://thumb7.shutterstock.com/display_pic_with_logo/1906715/261331787/stock-vector-abstract-creative-concept-vector-member-login-form-interface-for-web-page-site-mobile-261331787.jpg')
+                //background-color: lightgrey;
             }     
         }
 
