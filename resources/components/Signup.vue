@@ -3,14 +3,14 @@
             <div class="jumbotron">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/action_page.php">
+                        <form v-on:submit.prevent="submitPost">
                             <div class="from-control">
                                 <label >Username:</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                     <span class="input-group-text fa fa-user" ></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="username"  required>
+                                    <input type="text" class="form-control" placeholder="username">
                                     <div class="invalid-feedback">
                                     Please choose a username.
                                     </div>
@@ -22,7 +22,7 @@
                                     <div class="input-group-prepend">
                                     <span class="input-group-text fa fa-envelope" ></span>
                                     </div>
-                                    <input type="email" class="form-control"  placeholder="email"  required>
+                                    <input type="email" class="form-control"  placeholder="email" >
                                     <div class="invalid-feedback">
                                     Please enter valid email format.
                                     </div>
@@ -34,7 +34,7 @@
                                     <div class="input-group-prepend">
                                     <span class="input-group-text fa fa-lock" ></span>
                                     </div>
-                                    <input type="password" class="form-control"  placeholder="Password"  required>
+                                    <input type="password" class="form-control"  placeholder="Password">
                                 </div>
                             </div>
                             <div>
@@ -43,7 +43,7 @@
                                     <div class="input-group-prepend">
                                     <span class="input-group-text fa fa-lock" ></span>
                                     </div>
-                                    <input type="password" class="form-control"  placeholder="Re-enter password"  required>
+                                    <input type="password" class="form-control"  placeholder="Re-enter password">
                                 </div>
                             </div>
                             <button type="submit" v-bind:class={available:available} class="mt-4 btn btn-primary" >Submit</button>
@@ -55,20 +55,25 @@
     </template>
     <script>
     export default {
-    data() {
-        return {
-            available:true
-        };
-    },
-    mounted() {
-    }
+        data() {
+            return {
+                available:true
+            };
+        },
+        methods:{
+            submitPost(){
+                this.$router.push("/login");
+            }
+        },
+        mounted() {
+        }
     };
     </script>
 
     <style lang="scss" scoped>
         @media (min-width: 576px) { 
         label{
-        display: flex;
+            display: flex;
         } 
         .card{
                 width:300px;
@@ -78,21 +83,20 @@
                 width:500px;
                 margin:auto;
                 background-color: lightgrey;
-            } 
-            
-            
+            }     
         }
 
         // Medium devices (tablets, 768px and up)
         @media (min-width: 768px) { 
         .card{
                 width:400px;
-                //margin:auto
+                
             }
             .jumbotron{
                 width:600px;
-                //margin:auto;
-            } 
+                
+            }
+            
         }
 
         // Large devices (desktops, 992px and up)
@@ -100,12 +104,9 @@
             
             .card{
                 width:500px;
-               // margin:auto
             }
             .jumbotron{
-                width:700px;
-                //margin:auto;
-            
+                width:700px; 
             }
         }
 
@@ -115,13 +116,10 @@
             display: flex;
             }
             .card{
-                width:500px;
-                //margin:auto
+                width:500px;   
             }
             .jumbotron{
-                width:700px;
-                //margin:auto;
-                
+                width:700px;    
             } 
             .available{
                 width:100%;
@@ -129,11 +127,9 @@
                 border-bottom-color: green;
             }        
         }
-         @media (min-width: 1400px) { 
-            
+        @media (min-width: 1400px){
             .jumbotron{
-               margin-top:150px;
-            
+                margin-top:150px;
             }
         }
     </style>

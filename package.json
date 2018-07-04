@@ -21,8 +21,10 @@
     "jquery": "^3.3.1",
     "mongoose": "^5.1.6",
     "popper.js": "^1.14.3",
+    "sweetalert": "^2.1.0",
     "vue": "^2.5.16",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-sweetalert2": "^1.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
