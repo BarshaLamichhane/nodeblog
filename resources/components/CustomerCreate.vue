@@ -25,12 +25,6 @@
                                 <input type="text" class="form-control" v-model="customers.contact_no">
                             </div>
                             <div class="form-group">
-                                <label >Organisation</label>
-                                <select class="form-control" v-model="customers.organization_id"  >
-                                    <option v-for="organization in organizations" v-bind:key="organization.id" :value=organization.id >{{organization.name}}</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label>Report:</label>
                                 <input type="text" class="form-control" v-model="customers.reports_allowed">
                             </div>

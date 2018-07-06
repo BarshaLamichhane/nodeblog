@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
@@ -20,9 +20,12 @@
     "glyphicons": "^0.2.0",
     "jquery": "^3.3.1",
     "mongoose": "^5.1.6",
+    "nodemon": "^1.17.5",
     "popper.js": "^1.14.3",
+    "sweetalert": "^2.1.0",
     "vue": "^2.5.16",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-sweetalert2": "^1.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -34,7 +37,6 @@
     "eslint": "^4.19.1",
     "file-loader": "^1.1.4",
     "node-sass": "^4.5.3",
-    "nodemon": "^1.17.5",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",

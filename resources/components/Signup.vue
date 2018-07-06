@@ -3,7 +3,7 @@
             <div class="jumbotron">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/login" method="POST" v-on:submit.prevent="submitPost">
+                        <form v-on:submit.prevent="submitPost">
                             <div class="from-control">
                                 <label >Username:</label>
                                 <div class="input-group">
@@ -55,25 +55,25 @@
     </template>
     <script>
     export default {
-    data() {
-        return {
-            available:true
-        };
-    },
-    methods:{
-        submitPost(){
-            this.$router.push("/login");
+        data() {
+            return {
+                available:true
+            };
+        },
+        methods:{
+            submitPost(){
+                this.$router.push("/login");
+            }
+        },
+        mounted() {
         }
-    },
-    mounted() {
-    }
     };
     </script>
 
     <style lang="scss" scoped>
         @media (min-width: 576px) { 
         label{
-        display: flex;
+            display: flex;
         } 
         .card{
                 width:300px;
@@ -88,23 +88,20 @@
 
         // Medium devices (tablets, 768px and up)
         @media (min-width: 768px) { 
-            
-        label{
-        display: flex;
-        }
         .card{
                 width:400px;
+                
             }
             .jumbotron{
-                width:600px;  
-            } 
+                width:600px;
+                
+            }
+            
         }
 
         // Large devices (desktops, 992px and up)
         @media (min-width: 992px) { 
-            label{
-            display: flex;
-            }
+            
             .card{
                 width:500px;
             }

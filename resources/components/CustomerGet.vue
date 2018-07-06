@@ -78,8 +78,7 @@
                             <li class="page-item"><a href="javascript:void(0)" class="page-link" v-on:click="previous()">Previous</a></li>
                             <li class="page-item"><a href="javascript:void(0)" class="page-link" v-on:click="next()">Next</a></li>
                              <button type="button" id="create" class="btn btn-success" v-on:click="customerCreate()">Create</button> 
-                        </ul> 
-                       
+                        </ul>   
                     </nav>
                 </div>         
             </div>
