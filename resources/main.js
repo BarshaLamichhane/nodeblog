@@ -10,6 +10,7 @@ import 'glyphicons'
 window.jQuery = window.$ = require('jquery')
 window.Popper = require('popper.js')
 window.swal = require('sweetalert')
+window.axios = require('axios')
 
 /* eslint-disable no-new */
 new Vue({

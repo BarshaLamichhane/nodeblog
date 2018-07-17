@@ -1,5 +1,6 @@
 import Express from 'express'
 
+
 let app = Express()
 
 app.listen(process.env.PORT || 3000 , '0.0.0.0', function(){
@@ -7,6 +8,12 @@ app.listen(process.env.PORT || 3000 , '0.0.0.0', function(){
 })
 
 app.use(Express.json())
-app.use(Express.static('public'))
+app.use("/", Express.static('public'))
+
+require("dotenv").config()
+require("./app/dbconnection")
+
+
 
 require('./routers').set(app)
+
