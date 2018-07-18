@@ -3,7 +3,6 @@
             <div class="jumbotron">
                 <div class="card">
                     <div class="card-body">
-                        <form>
                             <div class="from-control">
                                 <label >Username:</label>
                                 <div class="input-group">
@@ -43,11 +42,13 @@
                                     <div class="input-group-prepend">
                                     <span class="input-group-text fa fa-lock" ></span>
                                     </div>
-                                    <input type="password" class="form-control"  placeholder="Re-enter password" v-model="register.confirmPassword">
+                                    <input type="password" class="form-control"  placeholder="Re-enter password" name="confirm" v-model="register.confirmPassword">
                                 </div>
+								<span v-if="register.password!=register.confirmPassword && register.confirmPassword && register.password"  class="form-text text-muted" id="emailHelp">Make sure that password and confirm password are same 
+                                </span>
                             </div>
 							<div class="from-control">
-                                <label >Contact No:</label>
+                                <label class="mt-2" >Contact No:</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                     <span class="input-group-text fa fa-user" ></span>
@@ -58,8 +59,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" v-bind:class={available:available} class="mt-4 btn btn-primary" @click="signUp">SignUp</button>
-                        </form>
+                            <button type="submit" v-bind:class={available:available} class="mt-4 btn btn-primary" v-if="register.password===register.confirmPassword" @click="signUp">SignUp</button>
+							 <button type="submit" v-bind:class={available:available} class="mt-4 btn btn-primary" v-else @click="warning()">SignUp</button>
+                        
                     </div>
                 </div>
             </div>
@@ -80,24 +82,31 @@
             }
         },
         methods:{
-            signUp(){
-				//if(this.password===this.confirmPassword){
-					axios.post('/signup', {
-						payload: this.register
-					}).then(function (response) {
-						console.log(response)
+		    signUp(){
+				var instance=this
+				axios.post('/signup', {
+					payload: this.register
+				}).then(function (response) {
+					console.log(response)
+					console.log(instance.id)	
+					if(response.err.errors.contact_no.message==this.contact_no+"is not a valid mobile no format"){
+						//alert("invalid")
 
-					}).catch(function (err) {
-						console.log(err)
-					})
-				//}else{
-					console.log("please make sure your password and confirm passwords are same")
-				//}
-        	}
+					}		
+
+				}).catch(function (err) {
+					console.log(err)
+				})
+			},
+			warning(){
+				console.log("not same password and confirm password")
+			}
+			
+			
         },
         mounted() {
         }
-    };
+    }
     </script>
 
     <style lang="scss" scoped>
@@ -113,7 +122,12 @@
                 width:500px;
                 margin:auto;
                 background-color: lightgrey;
-            }     
+            }  
+			#emailHelp{
+				color:red;
+				//background-color: green;
+				
+			}   
         }
 
         // Medium devices (tablets, 768px and up)
